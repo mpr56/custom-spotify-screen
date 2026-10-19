@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/manav/.spicetify/**)",
+      "Bash(spicetify -v)",
+      "Read(//Users/manav/.config/spicetify/**)",
+      "Read(//Users/manav/.config/spicetify/Extensions/**)",
+      "Bash(/Applications/Spotify.app/Contents/MacOS/Spotify --version)",
+      "Bash(defaults read *)",
+      "Bash(curl -s --max-time 2 http://127.0.0.1:9222/json)",
+      "Bash(grep -v '^[0-9]*\\\\.\\\\\\(js\\\\|css\\\\\\)$')",
+      "Bash(grep -o 'aria-label[^,]\\\\{0,80\\\\}' dwp-now-playing-bar.js)",
+      "Bash(python3 -I -c ' *)",
+      "Bash(osascript -e 'quit app \"Spotify\"')",
+      "Bash(open -a Spotify --args --remote-debugging-port=9222 --remote-allow-origins=*)",
+      "Bash(curl -s --max-time 1 http://127.0.0.1:9222/json)",
+      "Bash(curl -s http://127.0.0.1:9222/json)",
+      "Bash(python3 -I -c 'import json,sys; [print\\(t[\"type\"],t[\"url\"][:80],t.get\\(\"webSocketDebuggerUrl\"\\)\\) for t in json.load\\(sys.stdin\\)]')",
+      "Bash(open -a Spotify --args --remote-debugging-port=9222 '--remote-allow-origins=*')",
+      "Bash(node cdp-eval.mjs inspect.js)",
+      "Bash(node cdp-eval.mjs inspect2.js)",
+      "Bash(grep -o 'Desktop_LeftSidebar_Id[^}]\\\\{0,80\\\\}' dist/fullScreen.js)",
+      "Bash(grep -o '#global-nav-bar[^\"]\\\\{0,60\\\\}' dist/fullScreen.js)",
+      "Bash(sed -e 's/await wait\\(1500\\)/await wait\\(4000\\)/g; s/await wait\\(1000\\)/await wait\\(3000\\)/g' verify2.js)",
+      "Bash(node cdp-eval.mjs verify3.js)",
+      "Bash(python3 -I -c 'import json,sys; [print\\(s.get\\(\"label\"\\), s.get\\(\"activated\"\\), s.get\\(\"mainView\"\\), s.get\\(\"consoleErrors\",\"\"\\)\\) for s in json.load\\(sys.stdin\\)]')"
+    ]
+  }
+}

@@ -461,7 +461,12 @@ body {
     .main-topBar-topbarContentRight,
     .Root__nav-bar,
     .Root__main-view,
-    .Root__now-playing-bar {
+    .Root__now-playing-bar,
+    // Spotify 1.3.5+ (classes no longer mapped by Spicetify)
+    #global-nav-bar,
+    #Desktop_LeftSidebar_Id,
+    #main-view,
+    .Root > div > div:has(> [data-testid="now-playing-bar"]) {
         visibility: hidden !important;
         display: none !important;
         opacity: 0 !important;
@@ -469,7 +474,8 @@ body {
         pointer-events: none !important;
     }
 
-    .Root__top-container {
+    .Root__top-container,
+    .Root > div:has(> #global-nav-bar) {
         will-change: auto !important;
         transform: none !important;
         overflow-x: hidden !important;
