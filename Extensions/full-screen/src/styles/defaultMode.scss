@@ -9,14 +9,15 @@
         --fsd-sec-size: 28px;
     }
     &.lyrics-active
-        :not(#full-screen-display.lyrics-unavailable *, #full-screen-display.lyrics-hide-force *) {
+        :not(#full-screen-display.lyrics-unavailable *, #full-screen-display.lyrics-hide-force *),
+    &.jam-active * {
         --fsd-foreground-transform: 0px;
         --fsd-art-max-width: 500px;
         --fsd-items-max-width: 480px;
         --fsd-title-size: 40px;
         --fsd-sec-size: 23px;
     }
-    &.vertical-mode.lyrics-active {
+    &.vertical-mode:is(.lyrics-active, .jam-active) {
         // show lyrics container in the bottom instead of to the side
         --lyrics-alignment: center;
         #fsd-foreground {
@@ -38,8 +39,12 @@
                 height: 95% !important;
             }
         }
-        &.lyrics-unavailable,
-        &.lyrics-hide-force {
+        #fsd-jam-container {
+            width: 100%;
+            top: 50%;
+            height: 50%;
+        }
+        &:is(.lyrics-unavailable, .lyrics-hide-force):not(.jam-active) {
             --fsd-foreground-transform: 0%;
             #fsd-foreground {
                 width: 100%;
@@ -68,7 +73,8 @@
             :not(
                 #full-screen-display.lyrics-unavailable *,
                 #full-screen-display.lyrics-hide-force *
-            ) {
+            ),
+        &.jam-active * {
             --fsd-foreground-transform: 0px;
             --fsd-art-max-width: 450px;
             --fsd-items-max-width: 430px;
@@ -91,7 +97,8 @@
             :not(
                 #full-screen-display.lyrics-unavailable *,
                 #full-screen-display.lyrics-hide-force *
-            ) {
+            ),
+        &.jam-active * {
             --fsd-foreground-transform: 0px;
             --fsd-art-max-width: 400px;
             --fsd-items-max-width: 380px;
@@ -114,7 +121,8 @@
             :not(
                 #full-screen-display.lyrics-unavailable *,
                 #full-screen-display.lyrics-hide-force *
-            ) {
+            ),
+        &.jam-active * {
             --fsd-foreground-transform: 0px;
             --fsd-art-max-width: 350px;
             --fsd-items-max-width: 330px;
@@ -137,12 +145,24 @@
             :not(
                 #full-screen-display.lyrics-unavailable *,
                 #full-screen-display.lyrics-hide-force *
-            ) {
+            ),
+        &.jam-active * {
             --fsd-foreground-transform: 0px;
             --fsd-art-max-width: 300px;
             --fsd-items-max-width: 280px;
             --fsd-title-size: 36px;
             --fsd-sec-size: 20px;
+        }
+    }
+
+    // size and line the QR code up with the album art (measured in Jam.alignToArt)
+    #fsd-jam-container {
+        --jam-qr-size: calc(var(--jam-art-size, 460px) * 0.7);
+    }
+    &:not(.vertical-mode) #fsd-jam-container {
+        justify-content: flex-start;
+        #fsd-jam-qr {
+            margin-top: calc(var(--jam-art-center, 50vh) - var(--jam-qr-size) / 2);
         }
     }
 

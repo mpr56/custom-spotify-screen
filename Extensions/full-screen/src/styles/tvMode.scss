@@ -8,10 +8,11 @@
         top: auto;
         bottom: 75px;
     }
-    #fad-lyrics-plus-container {
+    #fad-lyrics-plus-container,
+    #fsd-jam-container {
         width: 45%;
     }
-    &.lyrics-active #fsd-foreground {
+    &:is(.lyrics-active, .jam-active) #fsd-foreground {
         width: max-content;
         max-width: 60%;
     }

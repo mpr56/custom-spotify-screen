@@ -23,7 +23,8 @@
       "Bash(grep -o '#global-nav-bar[^\"]\\\\{0,60\\\\}' dist/fullScreen.js)",
       "Bash(sed -e 's/await wait\\(1500\\)/await wait\\(4000\\)/g; s/await wait\\(1000\\)/await wait\\(3000\\)/g' verify2.js)",
       "Bash(node cdp-eval.mjs verify3.js)",
-      "Bash(python3 -I -c 'import json,sys; [print\\(s.get\\(\"label\"\\), s.get\\(\"activated\"\\), s.get\\(\"mainView\"\\), s.get\\(\"consoleErrors\",\"\"\\)\\) for s in json.load\\(sys.stdin\\)]')"
+      "Bash(python3 -I -c 'import json,sys; [print\\(s.get\\(\"label\"\\), s.get\\(\"activated\"\\), s.get\\(\"mainView\"\\), s.get\\(\"consoleErrors\",\"\"\\)\\) for s in json.load\\(sys.stdin\\)]')",
+      "Bash(node -e 'const q=require\\(\"qrcode-generator\"\\)\\(0,\"M\"\\);q.addData\\(\"x\"\\);q.make\\(\\);console.log\\(q.createSvgTag\\({cellSize:1,margin:4,scalable:true}\\).slice\\(0,400\\)\\)')"
     ]
   }
 }

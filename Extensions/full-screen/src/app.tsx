@@ -27,6 +27,7 @@ import { Context } from "./ui/components/Context/Context";
 import { PlayerControls } from "./ui/components/PlayerControls/PlayerControls";
 import { ExtraControls } from "./ui/components/ExtraControls/ExtraControls";
 import { Lyrics } from "./ui/components/Lyrics/Lyrics";
+import { Jam } from "./ui/components/Jam/Jam";
 import { Background } from "./utils/background";
 
 import "./styles/base.scss";
@@ -131,6 +132,7 @@ async function main() {
         }
         window.dispatchEvent(new Event("fad-request"));
         window.removeEventListener("lyrics-plus-update", Lyrics.handleLyricsUpdate);
+        Jam.destroy();
 
         handleMouseMoveDeactivation();
 
@@ -483,6 +485,7 @@ async function main() {
             }
             window.dispatchEvent(new Event("fad-request"));
         }
+        Jam.init();
         Spicetify.Mousetrap.bind("f11", fsToggle);
         document.addEventListener("fullscreenchange", fullScreenListener);
         Spicetify.Mousetrap.bind("esc", deactivate);
@@ -537,6 +540,7 @@ async function main() {
             }
             window.dispatchEvent(new Event("fad-request"));
         }
+        Jam.destroy();
         document.removeEventListener("fullscreenchange", fullScreenListener);
 
         Spicetify.Mousetrap.unbind("f11");

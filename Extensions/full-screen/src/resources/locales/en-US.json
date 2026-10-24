@@ -18,6 +18,7 @@
     },
     "upnext": "UP NEXT",
     "unknownArtist": "Artist (Unavailable)",
+    "jamQrScan": "Scan to join the Jam",
     "settings": {
         "switchToTV": "Switch to TV Mode",
         "switchToFullscreen": "Switch to Default Mode",
@@ -72,6 +73,8 @@
         },
         "autoHideLyrics": "Auto Hide Lyrics (when unavailable)",
         "lyricsAnimationTempo": "Lyrics Animation Tempo",
+        "jamQrDisplay": "Jam QR Code",
+        "jamQrDisplayDescription": "Show a QR code to join your Jam in place of the lyrics while a Jam is active.",
 
         "generalHeader": "General Settings",
         "progressBar": "Progress Bar",

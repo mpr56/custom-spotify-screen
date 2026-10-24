@@ -318,6 +318,62 @@
         }
     }
 
+    #fsd-jam-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        --jam-qr-size: min(32vh, 22vw);
+        color: var(--primary-color);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(1000px) scale3d(0.1, 0.1, 0.1) rotate(45deg);
+        transition:
+            transform var(--transition-duration) var(--transition-function),
+            opacity var(--transition-duration) var(--transition-function);
+    }
+
+    #fsd-jam-qr {
+        width: var(--jam-qr-size);
+        aspect-ratio: 1;
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        svg rect {
+            fill: transparent;
+        }
+        svg path {
+            // match the themed control buttons, but opaque so it still scans
+            fill: rgba(var(--theme-color), 1);
+            transition: fill var(--transition-duration) var(--transition-function);
+        }
+    }
+
+    #fsd-jam-text {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &.jam-active {
+        #fad-lyrics-plus-container {
+            transform: translateX(1000px) scale3d(0.1, 0.1, 0.1) rotate(45deg);
+        }
+        #fsd-jam-container {
+            opacity: 1;
+            pointer-events: auto;
+            transform: none;
+        }
+    }
+
     #fsd-foreground {
         position: relative;
         top: 0;

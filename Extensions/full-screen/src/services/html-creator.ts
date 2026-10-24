@@ -1,5 +1,6 @@
 import ICONS from "../constants";
 import CFM from "../utils/config";
+import translations from "../resources/strings";
 
 export const getHtmlContent = (areLyricsForceHidden: boolean) => {
     return `
@@ -39,6 +40,14 @@ export const getHtmlContent = (areLyricsForceHidden: boolean) => {
 <div id="fsd-overview-card-parent"></div>
 
 ${CFM.get("lyricsDisplay") ? `<div id="fad-lyrics-plus-container"></div>` : ""}
+${
+    CFM.get("jamQrDisplay")
+        ? `<div id="fsd-jam-container">
+    <div id="fsd-jam-qr"></div>
+    <div id="fsd-jam-text">${translations[CFM.getGlobal("locale") as string].jamQrScan}</div>
+</div>`
+        : ""
+}
 <div id="fsd-foreground">
     <div id="fsd-art">
         <div id="fsd-art-image" class="fsd-background-fade">
